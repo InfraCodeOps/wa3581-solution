@@ -10,7 +10,12 @@ terraform {
     }
   }
 
-  # Backend is configured implicitly by HCP Terraform Workspace
+  cloud {
+    organization = "tf-advanced-labs-<Your_Github_Username>" # Make sure to replace with your actual HCP Org Name
+    workspaces {
+      name = "lab01"
+    }
+  }
 }
 
 provider "aws" {
